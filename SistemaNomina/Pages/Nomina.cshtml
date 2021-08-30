@@ -1,0 +1,61 @@
+﻿@page
+@model SistemaNomina.Pages.NominaModel
+@{
+    string Nombre="Luis";
+    string Apellido="Mesili";
+    string Cargo ="Ingeniero De Sistema";
+
+    double SalarioMensual = 14000;
+    double AFP = 2.87;
+    double DescuentoARS = 3.04;
+    double DescuentoIRS = 15;
+    double TotalDeDescuentos=0;
+    double SalarioNeto = 7000;
+
+
+    var listas = new List<String>();
+    listas.Add(Nombre);
+    listas.Add(Apellido);
+    listas.Add(Cargo);
+    listas.Add(SalarioMensual.ToString());
+    listas.Add (AFP.ToString());
+    listas.Add(DescuentoARS.ToString());
+    listas.Add(DescuentoIRS.ToString());
+    listas.Add(TotalDeDescuentos.ToString());
+    listas.Add(SalarioNeto.ToString());
+
+}
+
+
+<table class="table ">
+    <thead>
+        <tr>
+            <th>Nombre</th>
+            <th> Apellido</th>
+            <th>Cargo</th>
+            <th>Salario Mensual</th>
+            <th>AFP</th>
+            <th>Descuento ARS</th>
+            <th>Descuento ISR</th>
+            <th>Total De Descuentos </th>
+            <th> Salario Neto </th>
+        </tr>
+    </thead>
+
+    <tbody>
+
+        @foreach (var nomina in listas)
+         {
+           
+                <td>@nomina</td>
+         
+           
+                
+            
+           
+
+         }       
+    
+    </tbody>
+
+    </table>
